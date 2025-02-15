@@ -30,6 +30,7 @@ export const createResume = async (req, res) => {
 
 // Get Resume (Only Logged-in Users)
 export const getResume = async (req, res) => {
+  
   try {
     if (!req.user) {
       return res
