@@ -7,6 +7,7 @@ import authRoutes from './src/routes/authRoutes.js';
 import session from 'express-session';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import resumeRoutes from './src/routes/resumeRoutes.js';
 
 dotenv.config();  // Load environment variables from .env file
 
@@ -46,6 +47,8 @@ app.use(passport.session());
 
 // Use custom authentication routes
 app.use('/auth', authRoutes);
+//  Use Resume Routes
+app.use('/resumes', resumeRoutes);
 
 // Google OAuth Strategy Configuration
 passport.use(new GoogleStrategy({
